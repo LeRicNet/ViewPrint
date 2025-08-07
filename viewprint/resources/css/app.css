@@ -1,0 +1,49 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom scrollbar for dark theme */
+@layer utilities {
+    /* Webkit browsers (Chrome, Safari, Edge) */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-gray-900;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-gray-700 rounded;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-gray-600;
+    }
+
+    /* Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: theme('colors.gray.700') theme('colors.gray.900');
+    }
+}
+
+/* Focus styles for better accessibility */
+@layer components {
+    .focus-ring {
+        @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900;
+    }
+}
+
+/* Smooth transitions for interactive elements */
+@layer base {
+    * {
+        @apply transition-colors duration-150;
+    }
+
+    /* Disable transitions for color scheme changes */
+    * {
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    }
+}

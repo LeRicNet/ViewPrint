@@ -1,6 +1,7 @@
 <div>
     <!-- Command Palette Modal -->
-    <div x-show="@entangle('open')"
+    <div x-data="{ open: @entangle('open') }"
+         x-show="open"
          x-transition:enter="transition ease-out duration-100"
          x-transition:enter-start="opacity-0"
          x-transition:enter-end="opacity-100"
@@ -17,7 +18,7 @@
 
         <!-- Command Palette -->
         <div class="flex items-start justify-center min-h-screen pt-16 px-4">
-            <div x-show="@entangle('open')"
+            <div x-show="open"
                  x-transition:enter="transition ease-out duration-100"
                  x-transition:enter-start="opacity-0 scale-95"
                  x-transition:enter-end="opacity-100 scale-100"
@@ -41,7 +42,7 @@
                                class="flex-1 bg-transparent border-0 text-gray-100 placeholder-gray-500 focus:ring-0 focus:outline-none py-4 px-3 text-base"
                                placeholder="Type a command or search..."
                                x-ref="commandInput"
-                               x-init="$watch('$wire.open', value => { if (value) setTimeout(() => $refs.commandInput.focus(), 50) })"
+                               x-init="$watch('open', value => { if (value) setTimeout(() => $refs.commandInput.focus(), 50) })"
                                autocomplete="off">
                     </div>
                 </div>

@@ -21,8 +21,6 @@
     @stack('styles')
 </head>
 <body class="h-full bg-gray-900 text-gray-100 font-sans antialiased">
-<!-- Command Palette -->
-<livewire:command-palette />
 
 <!-- Global Keyboard Shortcuts Handler -->
 <div x-data="globalShortcuts" x-init="init" class="hidden"></div>
@@ -187,6 +185,8 @@
         }));
     });
 </script>
+
+@livewire('command-palette')
 
 <!-- Page Specific Scripts -->
 @stack('scripts')

@@ -1,7 +1,7 @@
 import './bootstrap';
 import './viewprint-app';
 import './niivue-export';
-import './niivue-test';
+// import './niivue-test';
 import Alpine from 'alpinejs';
 import collapse from '@alpinejs/collapse';
 import focus from '@alpinejs/focus';

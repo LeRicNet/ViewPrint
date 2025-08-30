@@ -1,4 +1,4 @@
-<div>
+<div id="command-palette-modal">
     <!-- Command Palette Modal -->
     <div x-data="{ open: @entangle('open') }"
          x-show="open"

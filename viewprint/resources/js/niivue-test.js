@@ -1,8 +1,8 @@
-import { Niivue } from '@niivue/niivue';
-import Alpine from 'alpinejs';
-
-// Make Alpine available globally
-window.Alpine = Alpine;
+// import { Niivue } from '@niivue/niivue';
+// import Alpine from 'alpinejs';
+//
+// // Make Alpine available globally
+// window.Alpine = Alpine;
 
 // Define the Niivue test component
 Alpine.data('niivueTest', () => ({
@@ -222,5 +222,5 @@ Alpine.data('niivueTest', () => ({
     }
 }));
 
-// Start Alpine
-Alpine.start();
+// // Start Alpine
+// Alpine.start();

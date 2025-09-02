@@ -43,7 +43,6 @@ class WorkspaceViewer extends Component
 
     public function showAddVolume()
     {
-        dd('called');
         $this->showAddVolumeModal = true;
     }
 

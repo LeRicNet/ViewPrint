@@ -1,6 +1,6 @@
 <div class="min-h-screen bg-gray-900 flex flex-col"
-     x-data="workspaceViewer"
-     @keydown.b.window="$wire.showAddVolume()"
+{{--     x-data="workspaceViewer"--}}
+{{--     @keydown.b.window="$wire.showAddVolume()"--}}
 >
 
     <!-- Header -->
@@ -23,6 +23,9 @@
 
     <!-- Main Content -->
     <div class="flex-1 relative">
+
+
+
         @if(empty($layers))
             <!-- Empty State -->
             <div class="absolute inset-0 flex items-center justify-center">
@@ -35,7 +38,7 @@
                     <h2 class="text-xl font-medium text-gray-400 mb-2">Empty Workspace</h2>
                     <p class="text-gray-500 mb-6">Add a base volume to get started</p>
 
-                    <button wire:click="$set('showAddVolumeModal', true)"
+                    <button wire:click="showAddVolume"
                             class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-md transition-colors">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
@@ -137,7 +140,7 @@
 @endpush
 
 @push('scripts')
-    <script src="https://unpkg.com/@niivue/niivue@0.42.0/dist/niivue.js"></script>
+{{--    <script src="https://unpkg.com/@niivue/niivue@0.42.0/dist/niivue.js"></script>--}}
     <script>
         document.addEventListener('alpine:init', () => {
             Alpine.data('workspaceViewer', () => ({
@@ -146,6 +149,7 @@
                 init() {
                     // Listen for volume added events
                     window.addEventListener('volumeAdded', (event) => {
+                        console.log('volumeAdded!', event);
                         this.loadVolume(event.detail);
                     });
 
